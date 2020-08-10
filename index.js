@@ -63,7 +63,12 @@ inquirer.prompt([
         type: "input",
         name: "email",
         message: "What is your email (Where people can reach you if they have questions RE this project)?"
-      }
+      },
+      {
+        type: "confirm",
+        name: "finalconfirm",
+        message: "Does this entry look correct to you? (You can always edit the README.md file directly after it has been generated)"
+      },
   ]).then(function(data) {
   
       if (err) {
