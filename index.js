@@ -3,7 +3,7 @@ var makeMD = require("./utils/generateMarkdown");
 var inquirer = require("inquirer"); 
 const { error } = require("console");
 var ui = new inquirer.ui.BottomBar();
-// ui.log.write('README.md interactive generator will ask for the following inputs: Title, Description, Installation, Usage, License, Contributing, Tests, GitHub Username, and Email');
+ui.log.write('README.md interactive generator will ask for the following inputs: Title, Description, Installation, Usage, License, Contributing, Tests, GitHub Username, and Email');
 
 
   // array of questions for user
@@ -66,28 +66,33 @@ var ui = new inquirer.ui.BottomBar();
   ];
 
   
-inquirer.prompt(questions
-    
-  ).then(data => {
-
-      console.log(data);
-      return data;
-   
-  })
-  .catch(console.error(error));
-  
 
 // function to write README file
 function writeToFile(fileName, data) {
 let markdown = makeMD(data);
-fs.writeFile(`./${ fileName }`, markdown);
+fs.writeFile(`./output/${ fileName }`, markdown,  function(err) {
+
+  if (err) {
+    return console.log(err);
+  }
+
+  console.log("Success!");
+
+});
 
 }
+
+inquirer.prompt(questions)
+  .then(data => {
+    var fileName = "README.md"
+    writeToFile(fileName, data);
+  });
+  // .catch(console.error(error));
 
 // function to initialize program
-function init() {
+// function init() {
 
-}
+// }
 
-// function call to initialize program
-init();
+// // function call to initialize program
+// init();
