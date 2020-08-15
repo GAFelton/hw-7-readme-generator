@@ -11,9 +11,19 @@ function generateMarkdown({title, description, installation, usage, license, con
   
   
   ## Table of Contents
-  
-  [TOC]
-  
+    
+ * [Installation](#Installation)
+
+ * [Usage](#Usage)
+ 
+ * [Contributing](#Contributing)
+ 
+ * [Tests](#Tests)
+ 
+ * [Questions](#Questions)
+ 
+ * [License](#License)
+ 
   
   
   ## Installation
