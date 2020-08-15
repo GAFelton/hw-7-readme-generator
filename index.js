@@ -1,23 +1,22 @@
 var fs = require("fs");
+var makeMD = require("./utils/generateMarkdown");
 var inquirer = require("inquirer"); 
+const { error } = require("console");
 var ui = new inquirer.ui.BottomBar();
-ui.log.write('README.md interactive generator will ask for the following inputs: Title, Description, Table of Contents, Installation, Usage, License, Contributing, Tests, GitHub Username, and Email');
+// ui.log.write('README.md interactive generator will ask for the following inputs: Title, Description, Installation, Usage, License, Contributing, Tests, GitHub Username, and Email');
 
-inquirer.prompt([
+
+  // array of questions for user
+  const questions = [
     {
       type: "input",
       name: "title",
-      message: "What is your project title?"
+      message: "What is the name of your project repo?"
     },
     {
         type: "input",
         name: "description",
         message: "What is your project description?"
-      },
-      {
-        type: "input",
-        name: "toc",
-        message: "What is your README Table of Contents? (please number each entry (ex. 1. 2. 3. etc)"
       },
       {
         type: "input",
@@ -29,19 +28,14 @@ inquirer.prompt([
         name: "usage",
         message: "What is your project usage informtion?"
       },
-      {
-        type: "input",
-        name: "description",
-        message: "What is your project description?"
-      },
     {
       type: "list",
       message: "Please choose your licence from the list below:",
       name: "licence",
       choices: [
         "MIT",
-        "licence",
-        "licence2"
+        "Apache v2.0",
+        "GNU GPL v3.0"
       ]
     },
     {
@@ -67,26 +61,27 @@ inquirer.prompt([
       {
         type: "confirm",
         name: "finalconfirm",
-        message: "Does this entry look correct to you? (You can always edit the README.md file directly after it has been generated)"
+        message: "Does this entry look correct to you? (You can always edit the README.md file directly after it has been generated)",
       },
-  ]).then(function(data) {
-  
-      if (err) {
-        return console.log(err);
-      }
-  
-      console.log("Success!");
-  
-   
-  });
-  
-  // array of questions for user
-const questions = [
+  ];
 
-];
+  
+inquirer.prompt(questions
+    
+  ).then(data => {
+
+      console.log(data);
+      return data;
+   
+  })
+  .catch(console.error(error));
+  
 
 // function to write README file
 function writeToFile(fileName, data) {
+let markdown = makeMD(data);
+fs.writeFile(`./${ fileName }`, markdown);
+
 }
 
 // function to initialize program
