@@ -36,8 +36,14 @@ function generateMarkdown({title, description, installation, usage, license, con
   
   ${ usage }
   
+
+
+  ## License
+  
+  ${ license }
   
   
+
   ## Contribution Guidelines
   
   ${ contribution }
@@ -59,10 +65,6 @@ function generateMarkdown({title, description, installation, usage, license, con
   [E-mail](${ email })
   
   
-  
-  ## License
-  
-  ${ license }
   `;
 }
 
