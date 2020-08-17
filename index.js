@@ -31,7 +31,7 @@ ui.log.write('README.md interactive generator will ask for the following inputs:
     {
       type: "list",
       message: "Please choose your licence from the list below:",
-      name: "licence",
+      name: "license",
       choices: [
         "MIT",
         "Apache v2.0",
@@ -76,7 +76,7 @@ fs.writeFile(`./output/${ fileName }`, markdown,  function(err) {
     return console.log(err);
   }
 
-  console.log("Success!");
+  console.log("Success! Your README.md file can be found in the output folder.");
 
 });
 
@@ -84,15 +84,12 @@ fs.writeFile(`./output/${ fileName }`, markdown,  function(err) {
 
 inquirer.prompt(questions)
   .then(data => {
+    if (data.finalconfirm === true) {
     var fileName = "README.md"
     writeToFile(fileName, data);
+    }
+    else {
+      console.log("Your README.md file was not generated. Rerun the program to start again.");
+    }
   });
-  // .catch(console.error(error));
 
-// function to initialize program
-// function init() {
-
-// }
-
-// // function call to initialize program
-// init();
