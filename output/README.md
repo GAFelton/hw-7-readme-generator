@@ -1,66 +1,66 @@
-# repo
+# hw-7-readme-generator
 
-  ![GitHub](https://img.shields.io/github/license/GAFELTON/repo)
+  ![GitHub](https://img.shields.io/github/license/GAFelton/hw-7-readme-generator)
 
   ## Description:
 
-  description
+  Create a command line interface application to generate great READMEs
   
   
   
   ## Table of Contents
-  
+    
  * [Installation](#Installation)
 
-* [Usage](#Usage)
-
-* [Contributing](#Contributing)
-
-* [Tests](#Tests)
-
-* [Questions](#Questions)
-
-* [License](#License)
-
-  
-  
+ * [Usage](#Usage)
+ 
+ * [Contributing](#Contributing)
+ 
+ * [Tests](#Tests)
+ 
+ * [Questions](#Questions)
+ 
+ * [License](#License)
+ 
   
   
   ## Installation
   
-  do not
+  install files from repo, `npm install` package.json.
   
   
   
   ## Usage
   
-  use it!
+  use command `node index.js` to run application.
+  
+
+
+  ## License
+  
+  Apache v2.0
   
   
+
+  ## Contribution Guidelines
   
-  ## Contributing
-  
-  voaijsdfe
+  Please contribute by forking the repo, cloning it, making changes, and then submitting a pull request. Please make sure to document your proposed changes
   
   
   
   ## Tests
   
-  oisjoijdd
+  Please add tests!
   
   
   
   ## Questions
   
-  Please address questions to GAFELTON.
+  Please address questions to GAFelton.
   
-  [Link to Profile](https://github.com/GAFELTON)
+  [Link to Profile](https://github.com/GAFelton)
   
-  [E-mail](feoijsdf)
+  [E-mail](gafelton@gmail.com)
   
   
-  
-  ## License
-  
-  undefined
   
