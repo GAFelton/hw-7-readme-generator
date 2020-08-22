@@ -4,6 +4,7 @@
 # Dependency directories
 node_modules/
 jspm_packages/
+output/*
 
 .vscode/*
 !.vscode/settings.json
