@@ -1,17 +1,21 @@
-var fs = require("fs");
-var makeMD = require("./utils/generateMarkdown");
-var inquirer = require("inquirer"); 
-const { error } = require("console");
-var ui = new inquirer.ui.BottomBar();
+const fs = require("fs");
+const makeMD = require("./utils/generateMarkdown");
+const inquirer = require("inquirer"); 
+const ui = new inquirer.ui.BottomBar();
 ui.log.write('README.md interactive generator will ask for the following inputs: Title, Description, Installation, Usage, License, Contributing, Tests, GitHub Username, and Email');
 
 
   // array of questions for user
   const questions = [
+    // Required Question
     {
       type: "input",
       name: "title",
-      message: "What is the name of your project repo?"
+      message: "What is the name of your project repo?",
+      validate: function (value) {
+        var valid = (value.length > 0);
+        return valid || 'Please enter a repo name';
+      }
     },
     {
         type: "input",
@@ -26,7 +30,7 @@ ui.log.write('README.md interactive generator will ask for the following inputs:
       {
         type: "input",
         name: "usage",
-        message: "What is your project usage informtion?"
+        message: "What is your project usage information?"
       },
     {
       type: "list",
@@ -48,10 +52,15 @@ ui.log.write('README.md interactive generator will ask for the following inputs:
         name: "tests",
         message: "What are the test instructions for your project?"
       },
+      // Required Question
       {
         type: "input",
         name: "username",
-        message: "What is your GitHub username?"
+        message: "What is your GitHub username?",
+        validate: function (value) {
+          var valid = (value.length > 0);
+          return valid || 'Please enter a repo name';
+        }
       },
       {
         type: "input",
@@ -76,7 +85,7 @@ fs.writeFile(`./output/${ fileName }`, markdown,  function(err) {
     return console.log(err);
   }
 
-  console.log("Success! Your README.md file can be found in the output folder.");
+  console.log(`Success! Your ${ fileName } file can be found in the output folder. \n(Make sure to copy the file or it's contents before running this generator again, or your current  ${ fileName } will be overwritten.)`);
 
 });
 
@@ -84,12 +93,12 @@ fs.writeFile(`./output/${ fileName }`, markdown,  function(err) {
 
 inquirer.prompt(questions)
   .then(data => {
+    const fileName = "README.md"
     if (data.finalconfirm === true) {
-    var fileName = "README.md"
     writeToFile(fileName, data);
     }
     else {
-      console.log("Your README.md file was not generated. Rerun the program to start again.");
+      console.log(`Your ${ fileName } file was not generated. Rerun the program to start again.`);
     }
   });
 

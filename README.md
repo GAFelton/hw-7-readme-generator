@@ -1,6 +1,6 @@
 # hw-7-readme-generator
 
-  ![GitHub License](https://img.shields.io/github/license/GAFelton/hw-7-readme-generator)![GitHub Repo Size](https://img.shields.io/github/repo-size/GAFelton/hw-7-readme-generator)![Commit Activity](https://img.shields.io/github/commit-activity/m/GAFelton/hw-7-readme-generator)
+  ![GitHub License](https://img.shields.io/github/license/GAFelton/hw-7-readme-generator)![GitHub Repo Size](https://img.shields.io/github/repo-size/GAFelton/hw-7-readme-generator)
 
   ## Description:
 
@@ -42,7 +42,7 @@ Download the files and use `npm install` (or your preferred package manager) to 
 
   to run the application.
 
-![Application Demo Gif - 2 mins](./assets/node-readme-generator-demo-gif.gif)
+![Application Demo Gif - 2 mins](.\assets\node-readme-generator-demo-gif.gif)
 
 
 
@@ -73,6 +73,6 @@ Download the files and use `npm install` (or your preferred package manager) to 
 
   [Link to Profile](https://github.com/GAFelton)
 
-  [E-mail](gafelton@gmail.com)
+  [E-mail](64555318+GAFelton@users.noreply.github.com)
 
   

@@ -2,27 +2,29 @@
 function generateMarkdown({title, description, installation, usage, license, contribution, tests, username, email}) {
   return `# ${title}
 
-  ![GitHub](https://img.shields.io/github/license/${username}/${ title })
+  ![GitHub License](https://img.shields.io/github/license/${username}/${ title })![GitHub Repo Size](https://img.shields.io/github/repo-size/${username}/${title})
 
   ## Description:
 
   ${ description }
   
+  [Link to Repo](https://github.com/${ username }/${ title })
+
   
-  
+
   ## Table of Contents
     
  * [Installation](#Installation)
 
  * [Usage](#Usage)
+
+ * [License](#License)
  
  * [Contributing](#Contributing)
  
  * [Tests](#Tests)
  
  * [Questions](#Questions)
- 
- * [License](#License)
  
   
   
